@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Mail;
+use App\Mail\SendEmail;
+use App\Jobs\SendMailJob;
 
 class LoginRegisterController extends Controller
 {
@@ -35,9 +38,18 @@ class LoginRegisterController extends Controller
             'password' => Hash::make ($request->password)
         ]);
 
+        $data = [
+            'name'=> $request->name,
+            'email' => $request->email,
+            'subject' => "Berhasil Register",
+            'body' => "Hai. Selamat datang di CV Milik Jaehyuk. Nice To Meet You",
+        ];
+
         $credentials = $request->only('email', 'password');
         Auth::attempt($credentials);
         $request->session()->regenerate();
+
+        dispatch(new SendMailJob($data));
         return redirect()->route('dashboard')
         ->withSuccess('You have successfully registered & logged in!');
     }
