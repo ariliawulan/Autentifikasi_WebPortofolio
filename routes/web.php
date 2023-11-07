@@ -26,6 +26,9 @@ Route::controller(LoginRegisterController::class)->group(function() {
     Route::post('/authenticate', 'authenticate')->name('authenticate');
     Route::get('/dashboard', 'dashboard')->name('dashboard');
     Route::post('/logout', 'logout')->name('logout');
-   });
+    Route::get('/users', 'users')->name('users');
+    Route::put('/user/update/{id}', 'update')->name('update');
+    Route::get('/user/edit/{id}', 'usersEdit')->name('edit');
+});
 
 
