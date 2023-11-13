@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginRegisterController;
+use App\Http\Controllers\GalleryController;
 
 
 /*
@@ -29,6 +30,14 @@ Route::controller(LoginRegisterController::class)->group(function() {
     Route::get('/users', 'users')->name('users');
     Route::put('/user/update/{id}', 'update')->name('update');
     Route::get('/user/edit/{id}', 'usersEdit')->name('edit');
+});
+
+Route::controller(GalleryController::class)->group(function() {
+    Route::resource('gallery', GalleryController::class);
+    Route::get('/create', 'create')->name('create');
+    Route::delete('delete/{id}', 'destroy')->name('destroy');
+    Route::get('edit/{id}', 'edit')->name('edit');
+    Route::get('/store', 'store')->name('store');
 });
 
 
