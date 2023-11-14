@@ -13,7 +13,7 @@
                     @foreach ($galleries as $gallery)
                     <div class="col-md-3 mb-3">
                         <div class="text-center">
-                            <a class="example-image-link" href="{{$gallery->original_pict}}" data-lightbox="roadtrip" data-title="{{$gallery->description}}">
+                            <a class="example-image-link" href="{{asset('storage/posts_image/'.$gallery->picture)}}" data-lightbox="roadtrip" data-title="{{$gallery->description}}">
                                 <img class="example-image img-fluid" src="{{asset('storage/posts_image/'.$gallery->picture)}}" alt="image-1" />
                             </a>
                             <h4>{{ $gallery->title }}</h4>

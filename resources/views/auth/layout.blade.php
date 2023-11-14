@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="coba.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="{{ asset('lightbox2/dist/css/lightbox.min.css') }}"> 
+    <link rel="stylesheet" href="{{ asset('lightbox2-dev/lightbox2-dev/dist/css/lightbox.min.css') }}"> 
 </head>
 <body style="background-color: #081b29;">
   <nav class="navbar navbar-expand-lg bg-primary">
@@ -59,6 +59,6 @@
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-<script src="{{ asset('lightbox2/dist/js/lightbox-plus-jquery.min.js') }}"></script>
+<script src="{{ asset('lightbox2-dev/lightbox2-dev/dist/js/lightbox-plus-jquery.min.js') }}"></script>
 </body>
 </html>
