@@ -39,5 +39,3 @@ Route::controller(GalleryController::class)->group(function() {
     Route::get('edit/{id}', 'edit')->name('edit');
     Route::get('/store', 'store')->name('store');
 });
-
-

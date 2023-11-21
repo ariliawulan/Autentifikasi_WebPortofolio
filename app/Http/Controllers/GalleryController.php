@@ -10,6 +10,30 @@ class GalleryController extends Controller
     /**
      * Display a listing of the resource.
      */
+
+    public function indexapi()
+    {
+        $gallery = Post::all();
+        return response()->json(['data'=>$gallery], 200);
+    }
+
+    public function gallerydata(Request $request)
+    {
+        $gallery = $request->only([
+            'title',
+            'description',
+            'image'
+        ]);
+        
+        // Periksa apakah ada data yang diperlukan
+        if (empty($gallery['title']) && empty($gallery['description']) && empty($gallery['image'])) {
+            return response()->json(['error' => 'Missing data'], 400);
+        }
+    
+        // Mengembalikan respons JSON dengan data yang diambil dari request
+        return response()->json(['data' => $gallery], 200);
+    }
+
     public function index()
     {
         $data = array(
